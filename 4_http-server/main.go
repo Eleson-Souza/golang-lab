@@ -32,7 +32,10 @@ func ufsLocationHandler(w http.ResponseWriter, r *http.Request) {
 	// acessando APIs externas
 	response := external.GetUfsLocationApi()
 
-	if err := json.NewEncoder(w).Encode(response); err != nil {
+	// Codificando a resposta em JSON
+	err := json.NewEncoder(w).Encode(response)
+
+	if err != nil {
 		http.Error(w, fmt.Sprintf("Erro ao codificar a resposta: %v", err), http.StatusInternalServerError)
 		return
 	}
