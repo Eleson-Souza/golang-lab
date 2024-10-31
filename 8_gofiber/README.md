@@ -1,4 +1,3 @@
-```markdown
 # GoFiber API Documentation
 
 ## Índice
